@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>historico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="http://127.0.0.1:5500/index.html">
+            <button style="background-color: rgb(34, 151, 10); ">voltar</button>
+        </a>
+        <div>
+            <input type="text" id="cliente" class="inserir_cliente" placeholder="nome do cliente">
+            <input type="text" id="numero_cliente" class="inserir_numero" placeholder="numero do cliente">
+            <button  id="adicionar">Adicionar</button>
+            <button id="imprimir">imprimir </button>
+        </div>
+    </header>
+
+    <footer>
+        <div>
+            <input type="text" id="servico" class="inserir_serviço" placeholder="Serviço">
+            <input type="number" id="valor" class="inserir_valor" placeholder="Valor">
+            <input type="date" id="data_servico" class="inserir_serviço" placeholder="Data do Serviço">
+            <button  id="adicionar">Adicionar item</button>
+        </div>
+    </footer>
+
+    <main>
+        
+        <div class="box_histórico" id="historico">
+        </div>
+
+        <div style="text-align: end; width: 800px;
+        height: 40px; color: aliceblue; margin-top: 40px;"
+         id="valor_total">Valor Total: R$ 0.00</div>
+
+    </main>
+
+    <script src="js.js"></script>
+</body>
+</html>
