@@ -4,24 +4,21 @@
     box-sizing: border-box;
 }
 
-
-
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #2c3e50, #4ca1af);
-    color: #333;
     font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(to right, #000000, #434343);
+    color: #feda4a;
 }
 
 header {
-    background-color: #2d3a47;
+    background: linear-gradient(to right, #2d333a, #214a50);
     height: 100px;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid #e0e0e0;
+    border-bottom: 2px solid #444;
     padding: 10px;
 }
 
@@ -34,8 +31,10 @@ header input, header button {
     height: 40px;
     margin: 0 10px;
     padding: 0 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #555;
     border-radius: 5px;
+    background-color: #333;
+    color: #feda4a;
 }
 
 header button {
@@ -58,6 +57,27 @@ main {
     padding: 20px;
 }
 
+.nota-fiscal {
+    background-color: #1c1c1c;
+    border: 1px solid #444;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    color: #feda4a;
+}
+
+.nota-fiscal .titulo {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #feda4a;
+    padding-bottom: 10px;
+}
+
+.nota-fiscal .linha {
+    border-bottom: 1px dashed #feda4a;
+    margin: 10px 0;
+}
 
 @media (max-width: 668px) {
     header {
@@ -70,43 +90,11 @@ main {
         align-items: flex-start;
     }
 
-    header input, header button, footer input, footer button {
+    header input, header button {
         margin: 10px 0;
     }
 
-    .box_histórico {
+    .nota-fiscal {
         width: 100%;
     }
-
-    .historico-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .historico-item p {
-        margin: 5px 0;
-    }
-
-    button {
-        margin: 10px 0; /* Aumenta o espaçamento entre os botões */
-    }
-}
-
-.nota-fiscal p {
-    margin: 5px 0;
-}
-.nota-fiscal p strong {
-    display: inline-block;
-    width: 150px;
-}
-.nota-fiscal .titulo {
-    text-align: center;
-    font-size: 1.2em;
-    margin-bottom: 20px;
-    border-bottom: 1px dashed #000;
-    padding-bottom: 10px;
-}
-.nota-fiscal .linha {
-    border-bottom: 1px dashed #000;
-    margin: 10px 0;
 }
