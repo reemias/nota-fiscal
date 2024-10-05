@@ -1,43 +1,27 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const historico = document.getElementById('historico');
-    const adicionarClienteBtn = document.getElementById('adicionar');
-    const adicionarItemBtn = document.querySelector('footer #adicionar');
-    const imprimirBtn = document.getElementById('imprimir');
+document.getElementById('enviar').addEventListener('click', function() {
+    const nomeCliente = document.getElementById('nome_cliente').value;
+    const telefone = document.getElementById('telefone').value;
+    const servico = document.getElementById('servico').value;
+    const valorCobrado = document.getElementById('valor_cobrado').value;
+    const dataEntrega = document.getElementById('data_entrega').value;
+    const formaPagamento = document.getElementById('forma_pagamento').value;
 
-    function adicionarAoHistorico(texto, podeExcluir = false) {
-        const div = document.createElement('div');
-        div.className = 'historico-item';
-        div.textContent = texto;
+    const notaFiscalDiv = document.getElementById('nota_fiscal');
+    notaFiscalDiv.innerHTML = `
+        <div class="titulo">Nota Fiscal</div>
+        <p style="text-align: center;">CNPJ : 44.435.890/0001-30</p>
+        <div class="linha"></div>
+        <p><strong>Nome do Cliente:</strong> ${nomeCliente}</p>
+        <p><strong>Telefone:</strong> ${telefone}</p>
+        <p><strong>Serviço:</strong> ${servico}</p>
+        <p><strong>Valor Cobrado:</strong> R$ ${valorCobrado}</p>
+        <p><strong>Data de Entrega:</strong> ${dataEntrega}</p>
+        <p><strong>Forma de Pagamento:</strong> ${formaPagamento}</p>
+        <div class="linha"></div>
+        <p style="text-align: center;">Obrigado pela preferência!</p>
+    `;
+});
 
-        if (podeExcluir) {
-            const excluirBtn = document.createElement('button');
-            excluirBtn.textContent = 'Excluir';
-            excluirBtn.onclick = () => div.remove();
-            div.appendChild(excluirBtn);
-        }
-
-        historico.appendChild(div);
-    }
-
-    adicionarClienteBtn.addEventListener('click', () => {
-        const cliente = document.getElementById('cliente').value;
-        const numeroCliente = document.getElementById('numero_cliente').value;
-        if (cliente && numeroCliente) {
-            adicionarAoHistorico(`nome do cliente : ${cliente}`);
-            adicionarAoHistorico(`Número: ${numeroCliente}`);
-        }
-    });
-
-    adicionarItemBtn.addEventListener('click', () => {
-        const servico = document.getElementById('servico').value;
-        const valor = document.getElementById('valor').value;
-        const dataServico = document.getElementById('data_servico').value;
-        if (servico && valor && dataServico) {
-            adicionarAoHistorico(`Serviço: ${servico},___________ Valor: R$  :${valor},_______________ Data: ${dataServico}`, true);
-        }
-    });
-
-    imprimirBtn.addEventListener('click', () => {
-        window.print();
-    });
+document.getElementById('imprimir').addEventListener('click', function() {
+    window.print();
 });
